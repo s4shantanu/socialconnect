@@ -48,7 +48,12 @@ def test_api():
         if response.status_code == 200:
             print("✅ Public posts endpoint working")
             data = response.json()
-            print(f"   📊 Found {data.get('count', 0)} posts")
+            if isinstance(data, dict) and 'count' in data:
+                print(f"   📊 Found {data['count']} posts")
+            elif isinstance(data, list):
+                print(f"   📊 Found {len(data)} posts")
+            else:
+                print("   📊 Posts endpoint working")
         else:
             print(f"❌ Posts endpoint failed: {response.status_code}")
             
@@ -59,8 +64,10 @@ def test_api():
             data = response.json()
             if isinstance(data, list):
                 print(f"   👥 Found {len(data)} users")
+            elif isinstance(data, dict) and 'count' in data:
+                print(f"   👥 Found {data['count']} users")
             else:
-                print(f"   👥 Found {data.get('count', 0)} users")
+                print("   👥 Users endpoint working")
         else:
             print(f"❌ Users endpoint failed: {response.status_code}")
             
