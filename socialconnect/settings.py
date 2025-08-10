@@ -162,3 +162,28 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": True,
 }
+
+# CORS Settings - Allow frontend to connect to API
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000", 
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+]
+
+# Allow all origins for development (more permissive)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Allow credentials (for JWT tokens)
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'authorization',
+    'content-type',
+    'x-requested-with',
+    'accept',
+    'origin',
+    'cache-control',
+    'x-file-name',
+]
