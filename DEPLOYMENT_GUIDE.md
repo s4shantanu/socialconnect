@@ -2,7 +2,6 @@
 
 ## 🌐 Backend Deployment Options (Django API)
 
-Your Django API needs a server environment. Here are the best options:
 
 ### 1. **Heroku (Easiest for beginners)**
 ```bash

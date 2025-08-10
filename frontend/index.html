@@ -225,49 +225,6 @@
             <span class="status"> Ready for Netlify</span>
         </div>
 
-        <div class="deployment-info">
-            <h2> Deployment Guide</h2>
-            <p>Your SocialConnect API is ready for deployment! Here's how to deploy both backend and frontend:</p>
-            
-            <div class="deployment-step">
-                <h4>Step 1: Deploy Backend API (Choose One Platform)</h4>
-                <p><strong>Option A: Heroku (Recommended)</strong></p>
-                <div class="code-block">pip install gunicorn
-heroku create your-socialconnect-api
-git add .
-git commit -m "Deploy to Heroku"
-git push heroku main
-heroku run python manage.py migrate
-heroku run python manage.py createsuperuser</div>
-                
-                <p><strong>Option B: Railway</strong></p>
-                <div class="code-block">npm install -g @railway/cli
-railway login
-railway init
-railway deploy</div>
-                
-                <p><strong>Option C: Render.com</strong></p>
-                <p>Connect your GitHub repo → Choose "Web Service" → Auto-deploy</p>
-            </div>
-            
-            <div class="deployment-step">
-                <h4> Step 2: Deploy Frontend to Netlify</h4>
-                <p><strong>Easy Drag & Drop Method:</strong></p>
-                <ol style="margin-left: 20px; margin-top: 10px;">
-                    <li>Go to <a href="https://netlify.com" target="_blank" style="color: #667eea;">netlify.com</a></li>
-                    <li>Sign up/Login with GitHub</li>
-                    <li>Drag the <code>frontend</code> folder to Netlify</li>
-                    <li>Update API URL in the deployed frontend</li>
-                    <li>Your site will be live at: <code>https://your-app.netlify.app</code></li>
-                </ol>
-            </div>
-            
-            <div class="deployment-step">
-                <h4> Step 3: Connect Frontend to Backend</h4>
-                <p>After deploying your backend, update the API URL below and test the connection:</p>
-            </div>
-        </div>
-
         <div class="demo-section">
             <h2>🔧 API Configuration</h2>
             <input type="text" id="apiUrl" class="config-input" 
